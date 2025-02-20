@@ -79,15 +79,16 @@ function closeInput() {
 
 function _displayCount(itemCount) {
     const name = (itemCount === 1) ? 'to-do' : 'to-dos';
-
-    // TODO
+    const counter = document.getElementById('counter');
+    counter.textContent = `Всего задач: ${itemCount} ${name}`;
+   
 }
 
 function _displayItems(data) {
     const tBody = document.getElementById('todos');
     tBody.innerHTML = '';
 
-    //_displayCount(data.length);
+   _displayCount(data.length);
 
     const button = document.createElement('button');
 
@@ -123,3 +124,4 @@ function _displayItems(data) {
 
     todos = data;
 }
+

@@ -103,5 +103,12 @@ namespace TodoApi.Controllers
         {
             return _context.TodoItems.Any(e => e.Id == id);
         }
+
+        // GET: api/TodoItems/count
+        [HttpGet("count")]
+        public async Task<ActionResult<int>> GetTodoItemsCount()
+        {
+            return await _context.TodoItems.CountAsync();
+        }
     }
 }
