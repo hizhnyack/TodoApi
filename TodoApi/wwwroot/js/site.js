@@ -33,7 +33,11 @@ function addItem() {
 }
 
 function deleteItem(id) {
-    // TODO
+    fetch(uri + '/' + id, {
+        method: 'DELETE'
+    })
+        .then(() => getItems())
+        .catch(error => console.error('Unable to delete item.', error));
 }
 
 function displayEditForm(id) {
