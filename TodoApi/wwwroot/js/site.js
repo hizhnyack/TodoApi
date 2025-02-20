@@ -124,4 +124,12 @@ function _displayItems(data) {
 
     todos = data;
 }
+let editButton = document.createElement('button');
+editButton.innerText = 'Edit';
+editButton.className = 'edit'; // Добавляем класс для стилизации
+editButton.setAttribute('onclick', 'displayEditForm(' + item.id + ')');
 
+let deleteButton = document.createElement('button');
+deleteButton.innerText = 'Delete';
+deleteButton.className = 'delete'; // Добавляем класс для стилизации
+deleteButton.setAttribute('onclick', 'deleteItem(' + item.id + ')');
